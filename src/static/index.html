@@ -8,8 +8,17 @@
   </head>
   <body>
     <header>
-      <h1>Mergington High School</h1>
-      <h2>Extracurricular Activities</h2>
+      <div class="header-bar">
+        <div>
+          <h1>Mergington High School</h1>
+          <h2>Extracurricular Activities</h2>
+        </div>
+        <div class="teacher-controls">
+          <span id="teacher-status" class="teacher-status hidden">Teacher: <strong id="teacher-name"></strong></span>
+          <button id="logout-btn" class="secondary-btn hidden" type="button">Logout</button>
+          <button id="login-toggle" class="icon-btn" type="button" aria-label="Teacher login">👤</button>
+        </div>
+      </div>
     </header>
 
     <main>
@@ -22,7 +31,8 @@
       </section>
 
       <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
+        <h3>Teacher Registration Panel</h3>
+        <p class="help-text">Only logged-in teachers can register or unregister students.</p>
         <form id="signup-form">
           <div class="form-group">
             <label for="email">Student Email:</label>
@@ -44,6 +54,26 @@
     <footer>
       <p>&copy; 2026 Mergington High School</p>
     </footer>
+
+    <div id="login-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="login-title">
+      <div class="modal-content">
+        <h3 id="login-title">Teacher Login</h3>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="teacher-username">Username:</label>
+            <input type="text" id="teacher-username" required placeholder="teacher username" />
+          </div>
+          <div class="form-group">
+            <label for="teacher-password">Password:</label>
+            <input type="password" id="teacher-password" required placeholder="password" />
+          </div>
+          <div class="modal-actions">
+            <button type="button" id="login-cancel" class="secondary-btn">Cancel</button>
+            <button type="submit">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
 
     <script src="app.js"></script>
   </body>
